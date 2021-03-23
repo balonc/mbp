@@ -1317,7 +1317,6 @@ vFailureExit (bool bHelp, const char *format, ...) {
 // -----------------------------------------------------------------------------
 void
 vVersion (void)  {
-  printf ("%s\n", VERSION_SHORT);
   exit (EXIT_SUCCESS);
 }
 
@@ -1346,8 +1345,6 @@ vWarranty (void) {
 // -----------------------------------------------------------------------------
 void
 vHello (void) {
-  printf ("mbpoll %s - FieldTalk(tm) Modbus(R) Master Simulator\n",
-          VERSION_SHORT);
   printf ("Copyright © 2015-2019 %s, %s\n", AUTHORS, WEBSITE);
   printf ("This program comes with ABSOLUTELY NO WARRANTY.\n");
   printf ("This is free software, and you are welcome to redistribute it\n");

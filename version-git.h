@@ -1,0 +1,7 @@
+#define VERSION "1.4-25-g1968de6"
+#define VERSION_SHORT "1.4-25"
+#define VERSION_TINY "1.4"
+#define VERSION_MAJOR 1
+#define VERSION_MINOR 4
+#define VERSION_PATCH 25
+#define VERSION_SHA1 0x1968de6

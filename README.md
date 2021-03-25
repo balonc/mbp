@@ -1,7 +1,7 @@
 # mbpoll
 
 > Copyright © 2015-2019 epsilonRT, All rights reserved.  
-
+> Fork by balonc 2021-2021
 
 ## Abstract
 
@@ -22,40 +22,12 @@ mbpoll can:
 The reading and writing registers may be in decimal, hexadecimal or 
 floating single precision.
 
-## Quickstart guide
-
-The fastest and safest way to install mbpoll is to use the APT 
-repository from [piduino.org](http://apt.piduino.org), so you should do the following :
-
-    wget -O- http://www.piduino.org/piduino-key.asc | sudo apt-key add -
-    sudo add-apt-repository 'deb http://apt.piduino.org stretch piduino'
-    sudo apt update
-    sudo apt install mbpoll
-
-This repository provides `mbpoll` and `libmodbus` (version 3.1.4) packages for 
-`i386`, `amd64`, `armhf` and `arm64` architectures.
-In the above commands, the repository is a Debian Stretch distribution, but you 
-can also choose Ubuntu Trusty, Xenial or Bionic by replacing `stretch` with 
-`trusty`, `xenial` or `bionic`.  
-It may be necessary to install the `software-properties-common` 
-package for `add-apt-repository`.
-
-For Raspbian you have to do a little different :
-
-    wget -O- http://www.piduino.org/piduino-key.asc | sudo apt-key add -
-    echo 'deb http://raspbian.piduino.org stretch piduino' | sudo tee /etc/apt/sources.list.d/piduino.list
-    sudo apt update
-    sudo apt install mbpoll
-
-The Raspbian repository provides Piduino packages for `armhf` architecture for Stretch only.
-
 ## Build from source
 
 For example, for a debian system:
 
 * Install [libmodbus](https://github.com/stephane/libmodbus.git) (Version >= 3.1.4) :
 
-        $ sudo apt-get install build-essential libtool git-core autoconf automake
         $ git clone https://github.com/stephane/libmodbus.git
         $ cd libmodbus
         $ ./autogen.sh
@@ -63,43 +35,10 @@ For example, for a debian system:
         $ make
         $ sudo make install
 
-You can also install it with `apt` if the version of libmodbus is greater than or equal to 3.1.4.
-For example to query a debian system:
-
-    $ apt-cache show libmodbus-dev
-
-* Install [piduino](https://github.com/epsilonrt/piduino/tree/dev) **only if you want to manage the RS485 with a GPIO signal**:
-
-        $ sudo apt-get install cmake libcppdb-dev pkg-config libsqlite3-dev sqlite3 libudev-dev
-        $ git clone https://github.com/epsilonrt/piduino.git
-        $ cd piduino 
-        $ git checkout dev
-        $ mkdir build
-        $ cd build
-        $ cmake ..
-        $ make
-        $ sudo make install
-    
-* Generate Makefile with cmake:
-
-        $ sudo apt-get install cmake pkg-config
-        $ cd mbpoll
-        $ mkdir build
-        $ cd build
-        $ cmake ..
-
 * Compile and install mbpoll:
 
         $ make
         $ sudo make install
-        $ sudo ldconfig
-
-If you prefer, you can in the place of direct compilation create a package and install it:
-
-        $ make package
-        $ sudo dpkg -i * .deb
-
-That's all !
 
 ## Examples
 
@@ -207,19 +146,3 @@ A complete help is available with the -h option:
       -V            Print version and exit
       -v            Verbose mode.  Causes mbpoll to print debugging messages about
                     its progress.  This is helpful in debugging connection...
-
----
-> Copyright © 2015-2019 Pascal JEAN, All rights reserved.
-
-> mbpoll is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-> mbpoll is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-> You should have received a copy of the GNU General Public License
-along with mbpoll. If not, see <http://www.gnu.org/licenses/>.
